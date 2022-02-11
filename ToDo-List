@@ -4,7 +4,7 @@
 stages {
         stage('Open ToDo in Browser') {
             steps {
-              open url: 'http://http://127.0.0.1:5500/index.html'
+              open url: 'http://127.0.0.1:5500/index.html'
               }
         }
     }
