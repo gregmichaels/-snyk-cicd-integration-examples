@@ -13,7 +13,11 @@
                 git url: 'https://github.com/gregmichaels/javascript-todo-list-tutorial'
             }
         }
-        
+        stage('Open ToDo in Browser') {
+            steps {
+              open url: 'http://http://127.0.0.1:5500/index.html'
+              }
+        }
         stage('Run Snyk Scan') {
             steps {
                 snykSecurity monitorProjectOnBuild: true, snykInstallation: 'Snyk', snykTokenId: 'snyk_api_token'
