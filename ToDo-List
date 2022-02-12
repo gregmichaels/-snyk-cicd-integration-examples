@@ -2,9 +2,17 @@
     agent any
 
 stages {
-        stage('Open ToDo in Browser') {
+        stage('Build') {
             steps {
-              sh 'open http://127.0.0.1:5500/index.html'
+                sh 'rm -rf build'
+                sh 'mkdir build'
+                sh 'touch build/todo-list.txt'
+                sh 'echo "http://127.0.0.1:5500/index.html"'
+              }
+        }
+        stage('Test') {
+            steps {
+              sh 'test -f build/todo-list.txt'
               }
         }
     }
